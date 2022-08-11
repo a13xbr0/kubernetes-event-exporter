@@ -66,6 +66,8 @@ func main() {
 	if err != nil {
 		log.Fatal().Err(err).Msg("cannot get kubeconfig")
 	}
+	kubeconfig.QPS = cfg.KubeQPS
+	kubeconfig.Burst = cfg.KubeBurst
 
 	engine := exporter.NewEngine(&cfg, &exporter.ChannelBasedReceiverRegistry{})
 	onEvent := engine.OnEvent

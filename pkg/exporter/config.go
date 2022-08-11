@@ -13,6 +13,8 @@ type Config struct {
 	LogLevel       string                    `yaml:"logLevel"`
 	LogFormat      string                    `yaml:"logFormat"`
 	ThrottlePeriod int64                     `yaml:"throttlePeriod"`
+	KubeQPS        float32                   `yaml:"kubeQPS,omitempty"`
+	KubeBurst      int                       `yaml:"kubeBurst,omitempty"`
 	ClusterName    string                    `yaml:"clusterName,omitempty"`
 	Namespace      string                    `yaml:"namespace"`
 	LeaderElection kube.LeaderElectionConfig `yaml:"leaderElection"`
